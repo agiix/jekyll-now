@@ -4,12 +4,10 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Hi there!
+I am Armin Huremagic, a master student majoring in information security at the University of Applied Sciences in St.Pölten (Austria)
 
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[Contact](mailto:columbeff@gmail.com)
