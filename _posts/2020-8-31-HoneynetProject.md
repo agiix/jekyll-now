@@ -57,8 +57,5 @@ The PoC tool takes the .pb file as input, reads every event, tries to match the 
 ![Terminal output]({{ site.baseurl }}/images/terminal.png "Terminal output")
 
 Additionally, support for creating a detailed pdf report was added, that included every matched signature and the events it was triggered by. 
-
-![PDF report]({{ site.baseurl }}/images/pdf.png "PDF report")
-
 The signatures where partially self developed during the research phase and partially taken from Cuckoo's signature database and converted to be able to work with the PoC's structure. Most of the signatures where assigned to one or more TTP numbers, where as TTP stands for Tactics, Techniques and Procedures and describes patterns of activities or methods associated with a specific threat. Each TTP number matches a certain threat activity / behavior, which can be looked up at [MITRE](https://attack.mitre.org).
 
