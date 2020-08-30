@@ -37,6 +37,10 @@ After the research on Ransomware completed our focus shifted towards trojan like
 I summarized my research findings [here](https://github.com/agiix/analytical-malware-classification/tree/master/malware/trojan/emotet) and documented the analysis of all Emotet samples [here](https://github.com/agiix/analytical-malware-classification/tree/master/malware/trojan/stats).
 Generating useful signatures became a lot more challenging, because of Emotet's stealthiness. 
 
+#### TTPS
+
+Most of the signatures where assigned to one or more TTP numbers, where as TTP stands for Tactics, Techniques and Procedures and describes patterns of activities or methods associated with a specific threat. Each TTP number matches a certain threat activity / behavior, which can be looked up at [MITRE](https://attack.mitre.org).
+
 #### Threemon
 
 While researching upon malware categories and their behavior was a big part of the project, it also involved getting familiar with the new Cuckoo architecture. During the sandbox analysis, Cuckoo 3 uses a kernel based monitor called 'threemon', which for example, logs events like:
@@ -57,5 +61,5 @@ The PoC tool takes the .pb file as input, reads every event, tries to match the 
 ![Terminal output]({{ site.baseurl }}/images/terminal.png "Terminal output")
 
 Additionally, support for creating a detailed pdf report was added, that included every matched signature and the events it was triggered by. 
-The signatures where partially self developed during the research phase and partially taken from Cuckoo's signature database and converted to be able to work with the PoC's structure. Most of the signatures where assigned to one or more TTP numbers, where as TTP stands for Tactics, Techniques and Procedures and describes patterns of activities or methods associated with a specific threat. Each TTP number matches a certain threat activity / behavior, which can be looked up at [MITRE](https://attack.mitre.org).
+The signatures where partially self developed during the research phase and partially taken from Cuckoo's signature database and converted to be able to work with the PoC's structure.
 
