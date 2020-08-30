@@ -39,7 +39,10 @@ Generating useful signatures became a lot more challenging, because of Emotet's 
 
 #### TTPS
 
-Most of the signatures where assigned to one or more TTP numbers, where as TTP stands for Tactics, Techniques and Procedures and describes patterns of activities or methods associated with a specific threat. Each TTP number matches a certain threat activity / behavior, which can be looked up at [MITRE](https://attack.mitre.org).
+Most of the signatures were assigned to one or more TTP numbers, where as TTP stands for Tactics, Techniques and Procedures and describes patterns of activities or methods associated with a specific threat. Each TTP number matches a certain threat activity / behavior, which can be looked up at [MITRE](https://attack.mitre.org). Here a snippet of all TTPs MITRE assigned to the WannaCry malware:
+
+![MITRE WannaCry]({{ site.baseurl }}/images/WannaCry.png "MITRE WannaCry")
+
 
 #### Threemon
 
