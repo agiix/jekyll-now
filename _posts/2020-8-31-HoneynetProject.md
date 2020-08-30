@@ -74,7 +74,7 @@ Additionally, support for creating a detailed pdf report and a json dump of all 
 
 ## Attribution
 
-I want to thank the Honeynet Projet and the awesome team at Hatching for this unique and awesome opportunity. You are the best at what you are doing. 
+I want to thank the Honeynet Project and the awesome team at Hatching for this unique and awesome opportunity. You are the best at what you are doing. 
 
 My biggest thanks goes to my mentor Ricardo, for the great time while working on the project. You are clearly an expert in what you are doing and I learned so much from you. I couldn't have asked for a better mentor, keep up the great work!
 
