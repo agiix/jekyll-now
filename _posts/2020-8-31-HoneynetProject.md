@@ -20,16 +20,22 @@ It’s used to automatically run and analyze files and collect comprehensive ana
 
 #### Project Goals
 
-The goal of the project was to build a proof of concept module that uses an analytical approach to classify malware behavior into one or more categories. Additionally the project aimed to create new signatures for detecting malicious behavior, starting with Ransomware and then focusing on Trojan-like behavior, specifically for the Emotet family.
+The goal of the project was to build a proof of concept module that uses an analytical approach to classify malware behavior into one or more categories. 
+The analytical approach was chosen because we want to show which specific Indicator of Compromise (or in this case which TTP, but more about that later) caused the decision about categorization to be made. Additionally the project aimed to create new signatures for detecting malicious behavior, starting with Ransomware and then focusing on Trojan-like behavior, specifically for the Emotet family.
 
-## What has been done during GSoC
+## So, what have you been doing all Summer?
 
-#### Ransomware
+#### Malware Categories
 
 The start of the project involved a lot of research into different malware types, their specific behavior and key attributes that can be used to distinguish malware categories from each other and build signatures upon that information to support Cuckoo in detecting malicious behavior and classifying analyzed samples.
 Together with my mentor we decided to start digging into Ransomware families first.
-My key research findings can be found here. 
-The PoC tool I was working on relied on Cuckoo's analysis result outputted into the .pb file (more about that in the next section) and therefore some behaviors could not be implemented into signatures, since information about API-calls or the static analysis were missing. 
+My key research findings can be found [here](https://github.com/agiix/analytical-malware-classification/blob/master/malware/ransomware/classification.md) and additionally a statistical summary of eacht analyzed ransomware sample can be found [here](https://github.com/agiix/analytical-malware-classification/tree/master/malware/ransomware/stats). 
+
+The PoC tool I was working on relied on Cuckoo's analysis result outputted into the .pb file (more about that in the next section) and therefore some behaviors could not be implemented into signatures, since information about API-calls or the static analysis were missing.
+
+After the research on Ransomware completed our focus shifted towards trojan like malware categories and we decided to take a look on the Emotet family. 
+I summarized my research findings [here](https://github.com/agiix/analytical-malware-classification/tree/master/malware/trojan/emotet) and documented the analysis of all Emotet samples [here](https://github.com/agiix/analytical-malware-classification/tree/master/malware/trojan/stats).
+Generating useful signatures became a lot more challenging, because of Emotet's stealthiness. 
 
 #### Threemon
 
@@ -46,5 +52,5 @@ and output the logged events into a .pb file, which is based on [Google’s prot
 
 #### The PoC Tool
 
-The PoC that was developed during the project takes the .pb file as input, reads every event, tries to match the events to malicious behavior and classifies the analyzed sample to one or more categories. While the first version during the project required the user to convert the Threemon file to a json formatted output for further analysis, the second version is able to parse the events directly from the pb file. Additionally, support for creating a detailed pdf report was added, that included every matched signature and the events it was triggered by. The signatures where partially self developed during the research phase and partially taken from Cuckoo's signature database and converted to be able to work with the PoC's structure. Most of the signatures where assigned to one or more TTP numbers, where as TTP stands for Tactics, Techniques and Procedures and describes patterns of activities or methods associated with a specific threat. Each TTP number matches a certain threat activity / behavior, which can be looked up at MITRE.
+The PoC tool takes the .pb file as input, reads every event, tries to match the events to malicious behavior and classifies the analyzed sample to one or more categories. While the first version during the project required the user to convert the pb file to a json formatted output for further analysis, the second version is able to parse the events directly from the pb file. Additionally, support for creating a detailed pdf report was added, that included every matched signature and the events it was triggered by. The signatures where partially self developed during the research phase and partially taken from Cuckoo's signature database and converted to be able to work with the PoC's structure. Most of the signatures where assigned to one or more TTP numbers, where as TTP stands for Tactics, Techniques and Procedures and describes patterns of activities or methods associated with a specific threat. Each TTP number matches a certain threat activity / behavior, which can be looked up at MITRE.
 
