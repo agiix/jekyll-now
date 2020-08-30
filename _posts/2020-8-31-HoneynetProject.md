@@ -43,6 +43,7 @@ Most of the signatures were assigned to one or more TTP numbers, where as TTP st
 
 ![MITRE WannaCry]({{ site.baseurl }}/images/WannaCry.png "MITRE WannaCry")
 
+The signatures where partially self developed during the research phase and partially taken from Cuckoo's signature database and converted to be able to work with the PoC's structure.
 
 #### Threemon
 
@@ -59,10 +60,9 @@ and output the logged events into a .pb file, which is based on [Google’s prot
 
 #### The PoC Tool
 
-The PoC tool takes the .pb file as input, reads every event, tries to match the events to malicious behavior and classifies the analyzed sample to one or more categories. While the first version during the project required the user to convert the pb file to a json formatted output for further analysis, the second version is able to parse the events directly from the pb file. 
+The PoC tool takes the .pb file as input, reads every event, tries to match the events to malicious behavior and classifies the analyzed sample to one or more categories. While the first version during the project required the user to convert the pb file to a json formatted output for further analysis, the second version is able to parse the events directly from the pb file. The following snippet shows the displayed terminal output after the PoC tool analyzed a .pb file, which in this case are the events captured by a submitted WannaCry sample:
 
 ![Terminal output]({{ site.baseurl }}/images/terminal.png "Terminal output")
 
 Additionally, support for creating a detailed pdf report was added, that included every matched signature and the events it was triggered by. 
-The signatures where partially self developed during the research phase and partially taken from Cuckoo's signature database and converted to be able to work with the PoC's structure.
 
