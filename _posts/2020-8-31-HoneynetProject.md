@@ -23,7 +23,7 @@ It’s used to automatically run and analyze files and collect comprehensive ana
 The goal of the project was to build a proof of concept module that uses an analytical approach to classify malware behavior into one or more categories. 
 The analytical approach was chosen because we want to show which specific Indicator of Compromise (or in this case which TTP, but more about that later) caused the decision about categorization to be made. Additionally the project aimed to create new signatures for detecting malicious behavior, starting with Ransomware and then focusing on Trojan-like behavior, specifically for the Emotet family.
 
-## So, what have you been doing all Summer?
+## So, what have I been doing all Summer?
 
 #### Malware Categories
 
