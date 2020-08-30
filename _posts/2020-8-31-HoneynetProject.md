@@ -3,11 +3,11 @@ layout: post
 title: Honeynet Project - GSoC 2020
 ---
 
-**Student**: Armin Huremagic
-**Mentor**:  Ricardo van Zutphen
-**Organization**: The Honeynet Project
-**Project**: Analytical Malware Classification
-**Tag**: Information Security
+**Student**: Armin Huremagic  
+**Mentor**:  Ricardo van Zutphen  
+**Organization**: The Honeynet Project  
+**Project**: Analytical Malware Classification  
+**Tag**: Information Security  
 
 ![Cuckoo Logo]({{ site.baseurl }}/images/cuckoo.png "Cuckoo Logo")
 
