@@ -64,7 +64,9 @@ The PoC tool takes the .pb file as input, reads every event, tries to match the 
 
 ![Terminal output]({{ site.baseurl }}/images/terminal.png "Terminal output")
 
-Additionally, support for creating a detailed pdf report and a json dump of all captured events was added, that included every matched signature and the events it was triggered by. 
+Additionally, support for creating a detailed pdf report and a json dump of all captured events was added, that included every matched signature and the events it was triggered by. Here a snippet of the same sample's json dump:
+
+![JSON dump]({{ site.baseurl }}/images/json.png "JSON dump")
 
 ## What needs to be done in the future
 
