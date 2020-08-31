@@ -60,9 +60,17 @@ and output the logged events into a .pb file, which is based on [Google’s prot
 
 #### The PoC Tool
 
-The PoC tool (cuckoopbanalyzer) takes the .pb file as input, reads every event, tries to match the events to malicious behavior and classifies the analyzed sample to one or more categories. While the first version during the project required the user to convert the .pb file to a json formatted output for further analysis, the second version is able to parse the events directly from the .pb file. The following snippet shows the displayed terminal output after the PoC tool analyzed a .pb file, which in this case are the events captured by a submitted WannaCry sample:
+The PoC tool (cuckoopbanalyzer) takes the .pb file as input, reads every event, tries to match the events to malicious behavior and classifies the analyzed sample to one or more categories. While the first version during the project required the user to convert the .pb file to a json formatted output for further analysis, the second version is able to parse the events directly from the .pb file. 
+The tool takes one required argument as input which is a Cuckoo .pb file. This file will be generated once the malware analysis of the Cuckoo sandbox finishes.
+To test the analyzer take the .pb file from the test folder, which was generated from analyzing a WannaCry sample.
+```
+cuckoopbanalyzer test/wannacry.pb
+```
+
+The following snippet shows the displayed terminal output after the PoC tool analyzed a .pb file, which in this case are the events captured by a submitted WannaCry sample:
 
 ![Terminal output]({{ site.baseurl }}/images/terminal.png "Terminal output")
+
 
 As shown above, it not only displays which malware category and which signature have been matched to the sample, but also a description of each category, signature and TTP number, to give the user a better understanding of the results. 
 
