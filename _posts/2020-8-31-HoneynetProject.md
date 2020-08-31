@@ -67,7 +67,7 @@ To test the analyzer take the .pb file from the test folder, which was generated
 cuckoopbanalyzer test/wannacry.pb
 ```
 
-The following snippet shows the displayed terminal output after the PoC tool analyzed a .pb file, which in this case are the events captured by a submitted WannaCry sample:
+The following snippet shows the displayed terminal output after the PoC tool analyzed the .pb file:
 
 ![Terminal output]({{ site.baseurl }}/images/terminal.png "Terminal output")
 
