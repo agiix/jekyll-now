@@ -34,7 +34,7 @@ My key research findings can be found [here](https://github.com/agiix/analytical
 The PoC tool I was working on relied on Cuckoo's analysis result outputted into the .pb file (more about that in the next section) and therefore some behaviors could not be implemented into signatures, since information about API-calls or the static analysis were missing.
 
 After the research on Ransomware completed our focus shifted towards Trojan like malware categories, and we decided to take a look on the Emotet family. 
-I summarized my research findings [here](https://github.com/agiix/analytical-malware-classification/tree/master/malware/trojan/emotet) and documented the analysis of all Emotet samples [here](https://github.com/agiix/analytical-malware-classification/tree/master/malware/trojan/stats).
+I summarized my research findings [here](https://github.com/agiix/analytical-malware-classification/tree/master/malware/trojan/emotet) and documented the analysis of all Emotet samples [here](https://github.com/agiix/analytical-malware-classification/tree/master/malware/trojan/emotet/stats).
 Generating useful signatures became a lot more challenging, because of Emotet's stealthiness. 
 
 The signatures were partially self developed during the research phase and partially taken from Cuckoo's signature database and converted to be able to work with the PoC's structure.
