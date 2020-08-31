@@ -68,7 +68,8 @@ As shown above, it not only displays which malware category and which signature 
 
 Additionally, support for creating a detailed pdf report and a json dump of all captured events was added, that included every matched signature and the events it was triggered by. Here a snippet of the same sample's json dump:
 
-```"Categories":{
+```json
+"Categories":{
   "Ransomware": "Uses encryption to disable a target\u2019s access to its data until a ransom i\ns paid. The victim organization is rendered partially or totally unable \nto operate until it pays, but there is no guarantee that payment will re\nsult in the necessary decryption key or that the decryption key provided\n will function properly."
 },
 "TTPS": {
