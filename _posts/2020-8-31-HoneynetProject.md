@@ -75,8 +75,7 @@ Additionally, support for creating a detailed pdf report and a json dump of all 
 "TTPS": {
   "T1005" : "Sensitive data can be collected from local system sources, such as the file system or databases of information residing on the system prior to Exfiltration.",
 -truncated-  
-}
--truncated-
+},
 "UsesWindowsUtilities": {
       "Process":{
          "Command":[
@@ -103,7 +102,6 @@ Additionally, support for creating a detailed pdf report and a json dump of all 
       -truncated- 
       }
    },
- -truncated-  
  }
  ```
 
