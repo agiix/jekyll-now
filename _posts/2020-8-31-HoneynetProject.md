@@ -102,7 +102,9 @@ Additionally, support for creating a detailed pdf report and a json dump of all 
          ],
       -truncated- 
       }
-   }```
+   },
+ -truncated-  
+ ```
 
 ## What needs to be done in the future
 
