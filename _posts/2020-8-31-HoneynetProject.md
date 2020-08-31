@@ -21,7 +21,7 @@ It’s used to automatically run and analyze files and collect comprehensive ana
 #### Project Goals
 
 The goal of the project was to build a proof of concept module that uses an analytical approach to classify malware behavior into one or more categories. 
-The analytical approach was chosen because we want to show which specific Indicator of Compromise (or in this case which TTP, but more about that later) caused the decision about categorization to be made. Additionally the project aimed to create new signatures for detecting malicious behavior, starting with Ransomware and then focusing on Trojan-like behavior, specifically for the Emotet family.
+The analytical approach was chosen because we want to show which specific Indicator of Compromise (or in this case which TTP, but more about that later) caused the decision about categorization to be made. Additionally, the project aimed to create new signatures for detecting malicious behavior, starting with Ransomware and then focusing on Trojan-like behavior, specifically for the Emotet family.
 
 ## So, what have I been doing all Summer?
 
@@ -29,19 +29,19 @@ The analytical approach was chosen because we want to show which specific Indica
 
 The start of the project involved a lot of research into different malware types, their specific behavior and key attributes that can be used to distinguish malware categories from each other and build signatures upon that information to support Cuckoo in detecting malicious behavior and classifying analyzed samples.
 Together with my mentor we decided to start digging into Ransomware families first.
-My key research findings can be found [here](https://github.com/agiix/analytical-malware-classification/blob/master/malware/ransomware/classification.md) and additionally a statistical summary of eacht analyzed ransomware sample can be found [here](https://github.com/agiix/analytical-malware-classification/tree/master/malware/ransomware/stats). 
+My key research findings can be found [here](https://github.com/agiix/analytical-malware-classification/blob/master/malware/ransomware/classification.md) and additionally a statistical summary of each analyzed ransomware sample can be found [here](https://github.com/agiix/analytical-malware-classification/tree/master/malware/ransomware/stats). 
 
 The PoC tool I was working on relied on Cuckoo's analysis result outputted into the .pb file (more about that in the next section) and therefore some behaviors could not be implemented into signatures, since information about API-calls or the static analysis were missing.
 
-After the research on Ransomware completed our focus shifted towards trojan like malware categories and we decided to take a look on the Emotet family. 
+After the research on Ransomware completed our focus shifted towards Trojan like malware categories, and we decided to take a look on the Emotet family. 
 I summarized my research findings [here](https://github.com/agiix/analytical-malware-classification/tree/master/malware/trojan/emotet) and documented the analysis of all Emotet samples [here](https://github.com/agiix/analytical-malware-classification/tree/master/malware/trojan/stats).
 Generating useful signatures became a lot more challenging, because of Emotet's stealthiness. 
 
-The signatures where partially self developed during the research phase and partially taken from Cuckoo's signature database and converted to be able to work with the PoC's structure.
+The signatures were partially self developed during the research phase and partially taken from Cuckoo's signature database and converted to be able to work with the PoC's structure.
 
 #### TTPS
 
-Most of the signatures were assigned to one or more TTP numbers, where as TTP stands for Tactics, Techniques and Procedures and describes patterns of activities or methods associated with a specific threat. Each TTP number matches a certain threat activity / behavior, which can be looked up at [MITRE](https://attack.mitre.org). Here a snippet of all TTPs MITRE assigned to the WannaCry malware:
+Most of the signatures were assigned to one or more TTP numbers, whereas TTP stands for Tactics, Techniques and Procedures and describes patterns of activities or methods associated with a specific threat. Each TTP number matches a certain threat activity / behavior, which can be looked up at [MITRE](https://attack.mitre.org). Here a snippet of all TTPs MITRE assigned to the WannaCry malware:
 
 ![MITRE WannaCry]({{ site.baseurl }}/images/WannaCry.png "MITRE WannaCry")
 
@@ -60,11 +60,11 @@ and output the logged events into a .pb file, which is based on [Google’s prot
 
 #### The PoC Tool
 
-The PoC tool takes the .pb file as input, reads every event, tries to match the events to malicious behavior and classifies the analyzed sample to one or more categories. While the first version during the project required the user to convert the pb file to a json formatted output for further analysis, the second version is able to parse the events directly from the pb file. The following snippet shows the displayed terminal output after the PoC tool analyzed a .pb file, which in this case are the events captured by a submitted WannaCry sample:
+The PoC tool takes the .pb file as input, reads every event, tries to match the events to malicious behavior and classifies the analyzed sample to one or more categories. While the first version during the project required the user to convert the .pb file to a json formatted output for further analysis, the second version is able to parse the events directly from the .pb file. The following snippet shows the displayed terminal output after the PoC tool analyzed a .pb file, which in this case are the events captured by a submitted WannaCry sample:
 
 ![Terminal output]({{ site.baseurl }}/images/terminal.png "Terminal output")
 
-As shown above, it not only displays which malware category and which signature have been matched to the sample. but also a description of each category, signature and TTP number, to give the user a better understanding of the results. 
+As shown above, it not only displays which malware category and which signature have been matched to the sample, but also a description of each category, signature and TTP number, to give the user a better understanding of the results. 
 
 Additionally, support for creating a detailed pdf report and a json dump of all captured events was added, that included every matched signature and the events it was triggered by. Here a snippet of the same sample's json dump:
 
@@ -104,7 +104,7 @@ Additionally, support for creating a detailed pdf report and a json dump of all 
 
 ## What needs to be done in the future
 
-* The malware categorization is currently done by simply matching each TTP to a particular malware category, which is prone to false positives. Signature like [ADS](https://github.com/agiix/analytical-malware-classification/blob/master/sigs/persistence_ads.py), [ExecBitsAdmin](https://github.com/agiix/analytical-malware-classification/blob/master/sigs/exec_bitsadmin.py), [CreatesExe](https://github.com/agiix/analytical-malware-classification/blob/master/sigs/creates_exe.py) or [DeletesExecutedFiles](https://github.com/agiix/analytical-malware-classification/blob/master/sigs/deletes_executed.py) are to generic to attribute to a specific malware category, it is therefore important to create a more precise approach.
+* The malware categorization is currently done by simply matching each TTP to a particular malware category, which is prone to false positives. Signature like [ADS](https://github.com/agiix/analytical-malware-classification/blob/master/sigs/persistence_ads.py), [ExecBitsAdmin](https://github.com/agiix/analytical-malware-classification/blob/master/sigs/exec_bitsadmin.py), [CreatesExe](https://github.com/agiix/analytical-malware-classification/blob/master/sigs/creates_exe.py) or [DeletesExecutedFiles](https://github.com/agiix/analytical-malware-classification/blob/master/sigs/deletes_executed.py) are too generic to attribute to a specific malware category, it is therefore important to create a more precise approach.
 * Creating more and updating already existing signatures. Signatures like [BrowserStealer](https://github.com/agiix/analytical-malware-classification/blob/master/sigs/infostealer_browser_modifications.py) check if certain files, which are known to hold sensible information collected by the browser, where read from. Those file locations tend to change over time and therefore some research is needed to update the file paths accordingly.
 * A scoring system is missing, that gives each analyzed sample a score, for example from 1 to 10, to indicate how malicious the captured events are. One possible approach might be to assign every signature with a severity score. 
 
@@ -114,4 +114,4 @@ I want to thank the Honeynet Project and the awesome team at Hatching for this u
 
 My biggest thanks goes to my mentor Ricardo, for the great time while working on the project. You are clearly an expert in what you are doing and I learned so much from you. I couldn't have asked for a better mentor, keep up the great work!
 
-As for me personally, I had to chance to dive depper into the field of malware analysis with people that share the same passion. I am grateful to have had the chance to participate in this years GSoC and learn a lot about the development of open source projects and I am looking forward to keep contributing to this great community and project. 
+As for me personally, I had to chance to dive deeper into the field of malware analysis with people that share the same passion. I am grateful to have had the chance to participate in this years GSoC and learn a lot about the development of open source projects, and I am looking forward to keep contributing to this great community and project. 
