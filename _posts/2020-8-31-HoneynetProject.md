@@ -68,7 +68,41 @@ As shown above, it not only displays which malware category and which signature 
 
 Additionally, support for creating a detailed pdf report and a json dump of all captured events was added, that included every matched signature and the events it was triggered by. Here a snippet of the same sample's json dump:
 
-![JSON dump]({{ site.baseurl }}/images/json.png "JSON dump")
+```
+"Categories":{
+  "Ransomware": "Uses encryption to disable a target\u2019s access to its data until a ransom i\ns paid. The victim organization is rendered partially or totally unable \nto operate until it pays, but there is no guarantee that payment will re\nsult in the necessary decryption key or that the decryption key provided\n will function properly."
+},
+"TTPS": {
+  "T1005" : "Sensitive data can be collected from local system sources, such as the file system or databases of information residing on the system prior to Exfiltration.",
+-truncated-  
+}
+-truncated-
+"UsesWindowsUtilities":{
+      "Process":{
+         "Command":[
+            "attrib +h .",
+            "cmd.exe /c vssadmin delete shadows /all /quiet & wmic shadowcopy delete & bcdedit /set {default} bootstatuspolicy ignoreallfailures & bcdedit /set {default} recoveryenabled no & wbadmin delete catalog -quiet",
+            "wmic  shadowcopy delete ",
+            "cmd.exe /c reg add HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run /v \"biiywaghgcpcp303\" /t REG_SZ /d \"\\\"C:\\Users\\Admin\\AppData\\Local\\Temp\\tasksche.exe\\\"\" /f",
+            "reg  add HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run /v \"biiywaghgcpcp303\" /t REG_SZ /d \"\\\"C:\\Users\\Admin\\AppData\\Local\\Temp\\tasksche.exe\\\"\" /f"
+         ],
+         "Image":[
+            "C:\\Windows\\SysWOW64\\attrib.exe",
+            "C:\\Windows\\SysWOW64\\cmd.exe",
+            "C:\\Windows\\SysWOW64\\Wbem\\WMIC.exe",
+            "C:\\Windows\\SysWOW64\\cmd.exe",
+            "C:\\Windows\\SysWOW64\\reg.exe"
+         ],
+         "Status":[
+            "Create",
+            "Create",
+            "Create",
+            "Create",
+            "Create"
+         ],
+      -truncated- 
+      }
+   }```
 
 ## What needs to be done in the future
 
