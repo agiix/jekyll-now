@@ -1,2 +1,1 @@
-Analytical malware classification - cuckoopbanalyzer
-====================================================
+
