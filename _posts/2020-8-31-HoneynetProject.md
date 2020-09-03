@@ -118,7 +118,7 @@ Additionally, support for creating a detailed pdf report and a json dump of all 
 
 ## Conclusion
 
-Currently the PoC takes a rather simple approach to categorize malware samples, by matching certain TTP's to one or more malware categories. This works fine for malware categories like Ransomware, where there are characteristic behaviors that are unique for this category, but categories within the Trojan families are harder to distinguish by only matching for TTP's.
+Currently the PoC takes a rather simple approach to categorize malware samples, by matching certain TTP's to one or more malware categories. This works fine for malware categories like Ransomware, where there are characteristic behaviors that are unique for this category, but categories within the Trojan families are harder to distinguish by only matching for TTP's.  
 Some of the adapted signatures remain valid, but certain signatures need to be further updated, since they check for file locations within common applications that might have changed over time.  
 Overall, the taken approach works primarily well for testing old and new signatures, but needs more research and development to improve the challenge of malware categorization.
 
