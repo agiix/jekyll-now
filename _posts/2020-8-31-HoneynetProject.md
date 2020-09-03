@@ -116,10 +116,18 @@ Additionally, support for creating a detailed pdf report and a json dump of all 
 * Creating more and updating already existing signatures. Signatures like [BrowserStealer](https://github.com/agiix/analytical-malware-classification/blob/master/sigs/infostealer_browser_modifications.py) check if certain files, which are known to hold sensible information collected by the browser, where read from. Those file locations tend to change over time and therefore some research is needed to update the file paths accordingly.
 * A scoring system is missing, that gives each analyzed sample a score, for example from 1 to 10, to indicate how malicious the captured events are. One possible approach might be to assign every signature with a severity score. 
 
+## Conclusion
+
+* Currently the PoC takes a rather simple approach to categorize malware samples, by matching certain TTP's to one or more malware categories. 
+* This works fine for malware categories like Ransomware, where there are characterisic behaviors that are unique for this category, but categories within the Trojan families are harder to distunguish by only matching for TTP's
+* Some of the adapted signatures remain vailid, but certain signatures need to be further updated, since they check for certain file location within common applications that might have changed over time. 
+* The taken approach works primarly well for testing old and new signatures but needs more research and devlopment to improve the challenge of malware classification.
+
+
 ## Attribution
 
-I want to thank the Honeynet Project and the awesome team at Hatching for this unique and awesome opportunity. You are the best at what you are doing. 
+I want to thank the Honeynet Project and the awesome team at Hatching for this unique and awesome opportunity. During the project I was able to get an impression of the effort that goes into developing a sandbox system and I am deeply impressed by the knowledge you guys posses. 
 
 My biggest thanks goes to my mentor Ricardo, for the great time while working on the project. You are clearly an expert in what you are doing and I learned so much from you. I couldn't have asked for a better mentor, keep up the great work!
 
-As for me personally, I had to chance to dive deeper into the field of malware analysis with people that share the same passion. I am grateful to have had the chance to participate in this years GSoC and learn a lot about the development of open source projects, and I am looking forward to keep contributing to this great community and project. 
+As for me personally, I had to chance to dive deeper into the field of malware analysis with people that share the same passion. I am grateful to have had the chance to participate in this years GSoC and learn a lot about the development of open source projects. I am looking forward to keep contributing to this great community and project. 
