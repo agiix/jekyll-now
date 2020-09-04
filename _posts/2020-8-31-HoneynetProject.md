@@ -83,30 +83,33 @@ Additionally, support for creating a detailed pdf report and a json dump of all 
 "TTPS": {
   "T1005" : "Sensitive data can be collected from local system sources, such as the file system or databases of information residing on the system prior to Exfiltration."
 },
-"UsesWindowsUtilities": {
-      "Process":{
-         "Command":[
-            "attrib +h .",
-            "cmd.exe /c vssadmin delete shadows /all /quiet & wmic shadowcopy delete & bcdedit /set {default} bootstatuspolicy ignoreallfailures & bcdedit /set {default} recoveryenabled no & wbadmin delete catalog -quiet",
-            "wmic  shadowcopy delete ",
-            "cmd.exe /c reg add HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run /v \"biiywaghgcpcp303\" /t REG_SZ /d \"\\\"C:\\Users\\Admin\\AppData\\Local\\Temp\\tasksche.exe\\\"\" /f",
-            "reg  add HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run /v \"biiywaghgcpcp303\" /t REG_SZ /d \"\\\"C:\\Users\\Admin\\AppData\\Local\\Temp\\tasksche.exe\\\"\" /f"
-       ],
-       "Image":[
-          "C:\\Windows\\SysWOW64\\attrib.exe",
-          "C:\\Windows\\SysWOW64\\cmd.exe",
-          "C:\\Windows\\SysWOW64\\Wbem\\WMIC.exe",
-          "C:\\Windows\\SysWOW64\\cmd.exe",
-          "C:\\Windows\\SysWOW64\\reg.exe"
-       ],
-       "Status":[
-          "Create",
-          "Create",
-          "Create",
-          "Create",
-          "Create"
-       ],
-    }
+"Signatures": {
+  "UsesWindowsUtilities": {
+        "Process":{
+           "Command":[
+              "attrib +h .",
+              "cmd.exe /c vssadmin delete shadows /all /quiet & wmic shadowcopy delete & bcdedit /set {default} bootstatuspolicy ignoreallfailures & bcdedit /set {default} recoveryenabled no & wbadmin delete catalog -quiet",
+              "wmic  shadowcopy delete ",
+              "cmd.exe /c reg add HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run /v \"biiywaghgcpcp303\" /t REG_SZ /d \"\\\"C:\\Users\\Admin\\AppData\\Local\\Temp\\tasksche.exe\\\"\" /f",
+              "reg  add HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run /v \"biiywaghgcpcp303\" /t REG_SZ /d \"\\\"C:\\Users\\Admin\\AppData\\Local\\Temp\\tasksche.exe\\\"\" /f"
+         ],
+         "Image":[
+            "C:\\Windows\\SysWOW64\\attrib.exe",
+            "C:\\Windows\\SysWOW64\\cmd.exe",
+            "C:\\Windows\\SysWOW64\\Wbem\\WMIC.exe",
+            "C:\\Windows\\SysWOW64\\cmd.exe",
+            "C:\\Windows\\SysWOW64\\reg.exe"
+         ],
+         "Status":[
+            "Create",
+            "Create",
+            "Create",
+            "Create",
+            "Create"
+         ],
+      },
+    },
+  -truncated-
  }
 ```
 
