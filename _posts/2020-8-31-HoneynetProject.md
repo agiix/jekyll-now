@@ -4,7 +4,7 @@ title: Honeynet Project - GSoC 2020
 ---
 
 **Student**: Armin Huremagic  
-**Mentor**:  Ricardo van Zutphen  
+**Mentor**:  Ricardo van Zutphen, Jurriaan Bremer  
 **Organization**: The Honeynet Project  
 **Project**: Analytical Malware Classification  
 **Tag**: Information Security  
