@@ -60,7 +60,7 @@ and output the logged events into a .pb file, which is based on [Google’s prot
 
 #### The PoC Tool
 
-The PoC tool (cuckoopbanalyzer) takes the .pb file as input, reads every event, tries to match the events to malicious behavior and classifies the analyzed sample to one or more categories. While the first version during the project required the user to convert the .pb file to a json formatted output for further analysis, the second version is able to parse the events directly from the .pb file. 
+The PoC tool (cuckoopbanalyzer) takes the .pb file as input, reads every event, tries to match the events to malicious behavior and classifies the analyzed sample to one or more categories. While the first version during the project required the user to convert the .pb file to a json formatted output for further analysis, the second version is able to parse the events directly from the .pb file. The .pb files were created by a Cuckoo 3 instance that was setup during the project.
 The tool takes one required argument as input which is a Cuckoo .pb file. This file will be generated once the malware analysis of the Cuckoo sandbox finishes.
 To test the analyzer take the .pb file from the test folder, which was generated from analyzing a WannaCry sample.
 ```
